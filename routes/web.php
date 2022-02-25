@@ -32,3 +32,5 @@ Route::get('/tasks', [App\Http\Controllers\TaskController::class, 'index'])->nam
 Route::post('/task', [App\Http\Controllers\TaskController::class, 'store'])->name('store-task');
 
 Route::delete('/task/{id}', [App\Http\Controllers\TaskController::class, 'destroy'])->name('delete-task');
+
+Route::post('/task/update', [App\Http\Controllers\TaskController::class, 'update'])->name('update-task');

@@ -26,7 +26,7 @@ class TaskController extends Controller
      */
     public function create()
     {
-        //
+        
     }
 
     /**
@@ -58,9 +58,9 @@ class TaskController extends Controller
      * @param  \App\Models\Task  $task
      * @return \Illuminate\Http\Response
      */
-    public function edit(Task $task)
+    public function edit($id)
     {
-        //
+    
     }
 
     /**
@@ -70,9 +70,10 @@ class TaskController extends Controller
      * @param  \App\Models\Task  $task
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateTaskRequest $request, Task $task)
+    public function update(UpdateTaskRequest $request)
     {
-        //
+        Task::findOrFail($request->id)->update($request->only(['name', 'priority']));
+        return redirect('/tasks');
     }
 
     /**
