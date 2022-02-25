@@ -90,7 +90,7 @@
                                             </form>
                                         </td>
                                         <td>
-                                        <button for="edit-{{$task->id}}" type="submit" >Edit Task</button>
+                                        <button form="edit-{{$task->id}}" for="edit-{{$task->id}}" type="submit" >Edit Task</button>
 
                                         </td>
                                         <td>
