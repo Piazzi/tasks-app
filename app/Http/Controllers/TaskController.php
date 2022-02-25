@@ -73,7 +73,7 @@ class TaskController extends Controller
     public function update(UpdateTaskRequest $request)
     {
         Task::findOrFail($request->id)->update($request->only(['name', 'priority']));
-        return redirect('/tasks');
+        return redirect('home');
     }
 
     /**

@@ -86,6 +86,7 @@
                                                 <div>
                                                     <input type="text" name="name" id="task-name" value="{{$task->name}}" class="form-control">
                                                     <input hidden name="priority" id="priority" value="1" class="form-control">
+                                                    <input hidden name="id"  value="{{$task->id}}" class="form-control">
                                                 </div>
                                             </form>
                                         </td>
