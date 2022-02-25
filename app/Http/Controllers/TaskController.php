@@ -37,8 +37,8 @@ class TaskController extends Controller
      */
     public function store(StoreTaskRequest $request)
     {
-        Task::create($request->all());
-        return redirect('index');
+        Task::create($request->only(['name', 'priority']));
+        return redirect('home');
     }
 
     /**
@@ -81,9 +81,9 @@ class TaskController extends Controller
      * @param  \App\Models\Task  $task
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Task $task)
+    public function destroy($id)
     {
-        Task::findOrFail($task->id)->delete();
-        return redirect('/');
+        Task::findOrFail($id)->delete();
+        return redirect('/tasks');
     }
 }
