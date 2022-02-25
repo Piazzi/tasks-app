@@ -35,6 +35,8 @@ DB_USERNAME=your_username
 DB_PASSWORD=your_password
 
 ````
+
+Create a local database with the databse name you inserted above
  
 7. In the terminal, run the migrations with the command: **php artisan migrate --seed**;
 
