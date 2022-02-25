@@ -15,7 +15,8 @@ class TaskController extends Controller
      */
     public function index()
     {
-        //
+        $tasks = Task::orderBy('priority', 'asc')->get();;
+        return view('tasks', compact('tasks'));
     }
 
     /**
@@ -36,7 +37,8 @@ class TaskController extends Controller
      */
     public function store(StoreTaskRequest $request)
     {
-        //
+        Task::create($request->all());
+        return redirect('index');
     }
 
     /**
@@ -81,6 +83,7 @@ class TaskController extends Controller
      */
     public function destroy(Task $task)
     {
-        //
+        Task::findOrFail($task->id)->delete();
+        return redirect('/');
     }
 }

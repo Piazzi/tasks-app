@@ -1,6 +1,8 @@
 <?php
 
+use App\Models\Task;
 use Illuminate\Support\Facades\Route;
+use Symfony\Component\HttpFoundation\Request;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('auth.login');
 });
 
 Auth::routes();
@@ -24,3 +26,9 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('/tasks', [App\Http\Controllers\TaskController::class, 'index'])->name('tasks');
+ 
+Route::post('/task', [App\Http\Controllers\TaskController::class, 'store'])->name('store-task');
+
+Route::delete('/task/{id}', [App\Http\Controllers\HomeController::class, 'destroy'])->name('delete-task');

@@ -16,6 +16,8 @@
 
                     {{ __('You are logged in!') }}
                 </div>
+
+                @include('tasks')
             </div>
         </div>
     </div>

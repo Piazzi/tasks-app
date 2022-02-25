@@ -13,7 +13,8 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('tasks', function (Blueprint $table) {
+        Schema::create('tasks', function (Blueprint $table) { 
+            $table->increments('id');
             $table->string('name');
             $table->integer('priority');
             $table->timestamps();
